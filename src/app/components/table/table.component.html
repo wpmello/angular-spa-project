@@ -1,0 +1,45 @@
+
+<h4>Select a kind of shirt</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Kind of shirt</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let shirt of modelsShirt" [value]="shirt.model">
+      <div (click)="showTable(shirt.model)">{{shirt.model}}</div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<table *ngIf="showTableVar" mat-table [dataSource]="_filteredBooks" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="brand">
+    <th mat-header-cell *matHeaderCellDef> Brand </th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.brand }} </td>
+  </ng-container>
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.id }} </td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container matColumnDef="quantityMax">
+    <th mat-header-cell *matHeaderCellDef> Max Quantity</th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.quantityMax }} </td>
+  </ng-container>
+
+  <!-- ViewValeu Column -->
+  <ng-container matColumnDef="quantityInStock">
+    <th mat-header-cell *matHeaderCellDef> Stock Quantity </th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.quantityInStock }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="model">
+    <th mat-header-cell *matHeaderCellDef> Model </th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.model }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
