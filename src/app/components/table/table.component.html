@@ -1,4 +1,3 @@
-
 <h4>Select a kind of shirt</h4>
 <mat-form-field appearance="fill">
   <mat-label>Kind of shirt</mat-label>
@@ -24,15 +23,15 @@
   </ng-container>
 
   <!-- Price Column -->
-  <ng-container matColumnDef="quantityMax">
-    <th mat-header-cell *matHeaderCellDef> Max Quantity</th>
-    <td mat-cell *matCellDef="let shirt"> {{ shirt.quantityMax }} </td>
+  <ng-container matColumnDef="quantityInStock">
+    <th mat-header-cell *matHeaderCellDef> Stock Quantity</th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.quantityInStock }} </td>
   </ng-container>
 
   <!-- ViewValeu Column -->
-  <ng-container matColumnDef="quantityInStock">
-    <th mat-header-cell *matHeaderCellDef> Stock Quantity </th>
-    <td mat-cell *matCellDef="let shirt"> {{ shirt.quantityInStock }} </td>
+  <ng-container matColumnDef="quantityMax">
+    <th mat-header-cell *matHeaderCellDef> Max Quantity </th>
+    <td mat-cell *matCellDef="let shirt"> {{ shirt.quantityMax }} </td>
   </ng-container>
 
   <ng-container matColumnDef="model">

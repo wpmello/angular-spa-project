@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
   _filteredBooks: Shirt[] = [];
   allBooks: Shirt[] = [];
 
-  displayedColumns = [ 'id', 'brand', 'quantityMax', 'quantityInStock', 'model']
+  displayedColumns = [ 'id', 'brand', 'quantityInStock', 'quantityMax', 'model']
 
   getBooks() {
     this.shirtService.getBooks().subscribe(resp => {
