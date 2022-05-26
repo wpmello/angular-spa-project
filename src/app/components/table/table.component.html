@@ -1,12 +1,4 @@
-<h4>Select a kind of shirt</h4>
-<mat-form-field appearance="fill">
-  <mat-label>Kind of shirt</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let shirt of modelsShirt" [value]="shirt.model">
-      <div (click)="showTable(shirt.model)">{{shirt.model}}</div>
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<spa-select (clickEmit)="showTable($event)"></spa-select>
 
 <table *ngIf="showTableVar" mat-table [dataSource]="_filteredBooks" class="mat-elevation-z8">
 

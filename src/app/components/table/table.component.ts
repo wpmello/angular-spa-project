@@ -14,11 +14,9 @@ export class TableComponent implements OnInit {
   
   ngOnInit(): void {
     this.getBooks();
-    this.getModels();
   }
   
   showTableVar: boolean = false;
-  modelsShirt: Shirt[] = [];
   _filteredBooks: Shirt[] = [];
   allBooks: Shirt[] = [];
 
@@ -31,17 +29,10 @@ export class TableComponent implements OnInit {
     })
   }
 
-  getModels() {
-    this.shirtService.getModelsShirt().subscribe(resp => {
-      this.modelsShirt = resp;
-    })
-  }
-
   showTable(value: string) {
     this._filteredBooks = this.allBooks
     .filter((books: Shirt) => books.model.toLocaleLowerCase()
     .indexOf(value.toLocaleLowerCase()) > -1); 
     this.showTableVar = true;
   }
-
 }

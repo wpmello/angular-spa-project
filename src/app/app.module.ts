@@ -12,6 +12,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { TableComponent } from './components/table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ToolbarComponent,
     TableComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
