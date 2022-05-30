@@ -27,6 +27,5 @@ export class SelectComponent implements OnInit {
 
   getClickShirtModel(value: string) {
     this.clickEmit.emit(this.value = value);
-    console.log(value);
   }
 }
